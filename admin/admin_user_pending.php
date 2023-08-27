@@ -95,7 +95,12 @@
                                             <td style="color: mediumslateblue;"><?php echo $row['cust_status'];?></td>
                                             <td><?php echo $row['cust_balance'];?></td>
                                             <td>
-                                                <a href=""><button class="btn btn-warning text-light">Edit</button></a>
+
+                                            <a href="#id=<?php echo $row['id'];?>">
+                                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+                                                    Approve
+                                                </button>
+                                            </a>
                                                 <a href=""><button class="btn btn-danger text-light">Delete</button></a>
                                             </td>
                                         </tr>
