@@ -1,0 +1,6 @@
+REFERENCES:
+
+SIDEBAR:
+https://bbbootstrap.com/snippets/bootstrap-5-sidebar-menu-toggle-button-34132202
+
+tignan din ung project sa TOT(yung case study 1) para sa mga cdn. kasi diff version ng bootstrap tong sidebar.

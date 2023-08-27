@@ -1,0 +1,61 @@
+body{
+    background-image: url('../img/tailoring_bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#tailoring-text{
+    text-transform: uppercase;
+}
+#bizz-text{
+    color: blueviolet;
+}
+.main-text{
+    font-size: 100px;
+    color: white;
+    text-transform: uppercase;
+}
+.sub-text{
+    font-size: 70px;
+    color: white;
+}
+#title-line{
+    font: 150px;
+    color: rgb(169, 86, 246);
+}
+.footer{
+position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(17, 9, 28);
+  color: rgb(80, 78, 78);
+  text-align: center;
+}
+.btn-signup{
+    margin-top: 20px;
+    height: 50px;
+    width: 250px;
+    text-transform: uppercase;
+    color: white;
+}
+.main{
+    padding-top: 100px;
+}
+.signup-text{
+    color: white;
+}
+
+/* LOGIN STYLE */
+.login-texts{
+    color: white;
+    font-size: 120px;
+}
+#login-texts{
+    color: blueviolet;
+    font-size: 120px;
+}
+.btn-login{
+    width: 120px;
+    background-color: rgb(32, 80, 236);
+    text-transform: uppercase;
+}
