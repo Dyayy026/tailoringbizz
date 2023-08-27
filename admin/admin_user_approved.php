@@ -117,7 +117,7 @@
        
     </div>
 
- 
+    <?php include '../admin/modal_add_customer.php';?>
 
     <div class="footer pt-2">
         <p>TailoringBizz &copy2023 Developed by: Arjay Andal</p>
