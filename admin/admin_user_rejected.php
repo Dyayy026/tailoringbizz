@@ -53,7 +53,10 @@
                 <div class="col-md-12">
                      <h1>Rejected Users</h1>
                     <!-- Button to Open the Modal -->
-                    <a href="#"> <button class="btn btn-primary mt-3">Add Customer</button></a>
+                    <!-- Button to Open the Modal -->
+                    <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#myModal">
+                    Add Customer
+                    </button>
                     <a href="../admin/admin_user_pending.php"> <button class="btn btn-secondary mt-3">Pending Customer</button></a>
                     <a href="../admin/admin_user_approved.php"><button class="btn btn-secondary mt-3">Approved Customer</button></a>
                     <a href="../admin/admin_user_rejected.php"><button class="btn btn-info mt-3">Rejected Customer</button></a>
@@ -77,7 +80,7 @@
                             
                            <?php require '../conn.php';?>
                            <?php 
-                                $sql = "SELECT * FROM customers WHERE cust_role = 'Customer' AND cust_status = 'Rejected'";
+                                $sql = "SELECT * FROM customers WHERE cust_role = 'Customer' AND cust_status = 'Rejected' ORDER BY id DESC";
                                 $result = $conn->query($sql);
 
                                 if($result->num_rows > 0){

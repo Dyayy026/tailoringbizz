@@ -53,7 +53,6 @@
                 <div class="col-md-12">
                      <h1>All Users</h1>
                     <!-- Button to Open the Modal -->
-                    <!-- Button to Open the Modal -->
                     <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#myModal">
                     Add Customer
                     </button>
@@ -80,7 +79,7 @@
                             
                            <?php require '../conn.php';?>
                            <?php 
-                                $sql = "SELECT * FROM customers";
+                                $sql = "SELECT * FROM customers ORDER BY id DESC";
                                 $result = $conn->query($sql);
 
                                 if($result->num_rows > 0){
