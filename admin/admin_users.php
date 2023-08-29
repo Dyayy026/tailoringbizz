@@ -79,6 +79,7 @@
                             
                            <?php require '../conn.php';?>
                            <?php 
+
                                 $sql = "SELECT * FROM customers ORDER BY id DESC";
                                 $result = $conn->query($sql);
 
@@ -104,14 +105,21 @@
                                                 ?>
                                             <td><?php echo $row['cust_balance'];?></td>
                                             <td>
-                                                <a href=""><button class="btn btn-warning text-light">Edit</button></a>
+                                           
+                                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal<?php echo $row['id'];?>">
+                                                    Edit Customer
+                                                </button>
+                                            
                                                 <a href=""><button class="btn btn-danger text-light">Delete</button></a>
                                             </td>
                                         </tr>
                                         
                                         <?php
+                                    include '../admin/modal_edit_user.php';
+
                                     }
                                 }
+
                            ?>
                            
                         </tbody>
