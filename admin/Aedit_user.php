@@ -26,7 +26,7 @@ if($conn->query($sql) === TRUE){
 }
 else{
     echo "<SCRIPT> 
-    alert('Oops! account creation failed!')
+    alert('Oops! customer update failed!')
     window.location.replace('admin_users.php');
     </SCRIPT>";
 }

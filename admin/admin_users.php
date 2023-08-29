@@ -105,17 +105,20 @@
                                                 ?>
                                             <td><?php echo $row['cust_balance'];?></td>
                                             <td>
-                                           
                                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal<?php echo $row['id'];?>">
                                                     Edit Customer
                                                 </button>
+
+                                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#myModal_delete<?php echo $row['id'];?>">
+                                                    Delete
+                                                </button>
                                             
-                                                <a href=""><button class="btn btn-danger text-light">Delete</button></a>
                                             </td>
                                         </tr>
                                         
                                         <?php
                                     include '../admin/modal_edit_user.php';
+                                    include '../admin/modal_delete_user.php';
 
                                     }
                                 }
