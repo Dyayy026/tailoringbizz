@@ -16,17 +16,23 @@
       <div class="modal-body">
       <div class="container">
      
-        <form action="#" method="POST">
+        <form action="../admin/Aedit_user.php" method="POST">
         <div class="row">
-
-       
                     <div class="mb-3">
-                        <label for="firstname" class="form-label"><strong>Customer Name:</strong> </label>
-                        <input type="text" class="form-control" id="address" value="<?php echo $row['cust_fname'] . " " . $row['cust_lname'];?>" name="address" required>
+                        <label for="firstname" class="form-label"><strong>Customer firstname:</strong> </label>
+                        <input type="text" class="form-control" id="address" value="<?php echo $row['cust_fname'];?>" name="fname">
+                    </div>
+                    <div class="mb-3">
+                        <label for="firstname" class="form-label"><strong>Customer lastname:</strong> </label>
+                        <input type="text" class="form-control" id="address" value="<?php echo $row['cust_lname'];?>" name="lname">
                     </div>
                     <div class="mb-3 mt-3">
                         <label for="firstname" class="form-label"><strong> Contact Number:</strong></label>
                         <input type="number" class="form-control" id="cnumbe" value="<?php echo $row['cust_cnumber'];?>" name="cnum" required>
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="firstname" class="form-label"><strong> Address:</strong></label>
+                        <input type="text" class="form-control" id="cnumbe" value="<?php echo $row['cust_address'];?>" name="address" required>
                     </div>
                      
                     <div class="mb-3 mt-3">
@@ -39,6 +45,7 @@
                         <option value="Customer">Customer</option>
                     </select>
                     </div>
+                    <input type="hidden" name="edit_id" value="<?php echo $row['id'];?>">
             <button type="submit" class="btn btn-primary mt-5">Update</button>
 
         </div>
