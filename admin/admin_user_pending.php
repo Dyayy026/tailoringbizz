@@ -101,13 +101,15 @@
                                                     Approve
                                                 </button>
                                             </a>
-                                                <a href=""><button class="btn btn-danger text-light">Delete</button></a>
+                                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#myModal_reject<?php echo $row['id'];?>">
+                                                    Reject
+                                                </button>
                                             </td>
                                         </tr>
                                         
                                         <?php
                                      include '../admin/modal_approved_user.php';
-
+                                     include '../admin/modal_reject_user.php';
                                     }
                                 }
                                 include '../admin/modal_add_customer.php';

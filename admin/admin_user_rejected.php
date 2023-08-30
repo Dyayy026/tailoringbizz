@@ -95,7 +95,6 @@
                                             <td style="color: crimson;"><?php echo $row['cust_status'];?></td>
                                             <td><?php echo $row['cust_balance'];?></td>
                                             <td>
-                                                <a href=""><button class="btn btn-warning text-light">Edit</button></a>
                                                 <a href=""><button class="btn btn-danger text-light">Delete</button></a>
                                             </td>
                                         </tr>
