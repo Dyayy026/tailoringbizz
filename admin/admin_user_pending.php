@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
+    <title>Pending Users</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
@@ -34,7 +34,7 @@
             <nav class="nav">
                 <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">TailoringBizz</span> </a>
                     <div class="nav_list"> 
-                        <a href="#" class="nav_link"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Dashboard</span> </a> 
+                        <a href="../admin/admin_dashboard.php" class="nav_link"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Dashboard</span> </a> 
                         <a href="../admin/admin_users.php" class="nav_link active" > <i class='bx bx-user nav_icon'></i> <span class="nav_name">Customers</span> </a> 
                         <a href="../admin/workx.php" class="nav_link"> <i class='bx bx-message-square-detail nav_icon'></i> <span class="nav_name">Workx</span> </a>
                         <a href="../admin/catalog.php" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Catalog</span> </a> 
@@ -97,7 +97,7 @@
                                             <td>
 
                                             <a href="#id=<?php echo $row['id'];?>">
-                                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+                                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal_approve<?php echo $row['id'];?>">
                                                     Approve
                                                 </button>
                                             </a>
@@ -106,8 +106,11 @@
                                         </tr>
                                         
                                         <?php
+                                     include '../admin/modal_approved_user.php';
+
                                     }
                                 }
+                                include '../admin/modal_add_customer.php';
                            ?>
                            
                         </tbody>
@@ -120,9 +123,9 @@
     <!--Container Main end-->
     <!-- SIDEBAR END-->
        
+
     </div>
 
-    <?php include '../admin/modal_add_customer.php';?>
 
     <div class="footer pt-2">
         <p>TailoringBizz &copy2023 Developed by: Arjay Andal</p>
