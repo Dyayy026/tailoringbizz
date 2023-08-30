@@ -7,3 +7,6 @@ tignan din ung project sa TOT(yung case study 1) para sa mga cdn. kasi diff vers
 
 EDIT DATA USING MODAL(USING ID TO SHOW VALUES)
 https://elevenstechwebtutorials.com/detail/7/show-dynamic-data-on-modal-popup-using-php
+
+STYLISTIC CARD FOR WORKX TAB
+https://freefrontend.com/bootstrap-cards/

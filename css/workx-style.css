@@ -1,0 +1,135 @@
+body {
+    background-color: #a09292
+}
+
+.card {
+    border: none;
+    border-radius: 10px
+}
+
+.c-details span {
+    font-weight: 300;
+    font-size: 13px
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    background-color: #eee;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 39px
+}
+
+.badge span {
+    background-color: #fffbec;
+    width: 60px;
+    height: 25px;
+    padding-bottom: 3px;
+    border-radius: 5px;
+    display: flex;
+    color: #fed85d;
+    justify-content: center;
+    align-items: center
+}
+
+.progress {
+    height: 10px;
+    border-radius: 10px
+}
+
+.progress div {
+    background-color: red
+}
+
+.text1 {
+    font-size: 14px;
+    font-weight: 600
+}
+
+.text2 {
+    color: #a5aec0
+}
+
+
+
+.stepper {
+    width: 100%;
+    display: flex;
+  }
+  
+  li {
+    display: inline-block;
+    position: relative;
+    margin-top: 32px;
+  }
+  li + li {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+  }
+  li + li::before {
+    display: block;
+    position: absolute;
+    left: -10%; 
+    top: -16px;
+    content: "";
+    width: 100%;
+    height: 4px;
+  }
+  
+  .item {
+    position: relative;
+    margin-left: auto;
+    margin-right: 0;
+    padding-top: 8px;
+    z-index: 1;
+  
+    text-align: center;
+  }
+  
+  .item::before {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    content: "";
+    top: -32px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 50%;
+    box-sizing: border-box;
+  }
+  
+  
+  .ready::before {
+    background-color: lightgrey;
+  }
+  .ready > .item::before {
+    background-color: lightgrey;
+  }
+  
+  .wip::before {
+    background-color: lightcoral;
+  }
+  .wip > .item::before {
+    border: solid 8px lightcoral;
+    background-color: white;
+  }
+  
+  .done::before {
+    background-color: lightcoral;
+  }
+  .done > .item::before {
+    background-color: lightcoral;
+  }
+  
+  
+  ul,
+  li {
+    padding: 0;
+    list-style: none;
+  }
+  
