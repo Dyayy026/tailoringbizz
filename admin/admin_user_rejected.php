@@ -72,7 +72,6 @@
                                 <th>Role</th>
                                 <th>Status</th>
                                 <th>Balance</th>
-                                <th>Action</th>
                             </tr>
                             
                         </thead>
@@ -94,9 +93,7 @@
                                             <td><?php echo $row['cust_role'];?></td>
                                             <td style="color: crimson;"><?php echo $row['cust_status'];?></td>
                                             <td><?php echo $row['cust_balance'];?></td>
-                                            <td>
-                                                <a href=""><button class="btn btn-danger text-light">Delete</button></a>
-                                            </td>
+                                            
                                         </tr>
                                         
                                         <?php
