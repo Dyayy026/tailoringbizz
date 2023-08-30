@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
+    <title>All users</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
@@ -34,7 +34,7 @@
             <nav class="nav">
                 <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">TailoringBizz</span> </a>
                     <div class="nav_list"> 
-                        <a href="#" class="nav_link"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Dashboard</span> </a> 
+                        <a href="../admin/admin_dashboard.php" class="nav_link"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Dashboard</span> </a> 
                         <a href="../admin/admin_users.php" class="nav_link active" > <i class='bx bx-user nav_icon'></i> <span class="nav_name">Customers</span> </a> 
                         <a href="../admin/workx.php" class="nav_link"> <i class='bx bx-message-square-detail nav_icon'></i> <span class="nav_name">Workx</span> </a>
                         <a href="../admin/catalog.php" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Catalog</span> </a> 
@@ -79,6 +79,7 @@
                             
                            <?php require '../conn.php';?>
                            <?php 
+
                                 $sql = "SELECT * FROM customers ORDER BY id DESC";
                                 $result = $conn->query($sql);
 
@@ -104,14 +105,24 @@
                                                 ?>
                                             <td><?php echo $row['cust_balance'];?></td>
                                             <td>
-                                                <a href=""><button class="btn btn-warning text-light">Edit</button></a>
-                                                <a href=""><button class="btn btn-danger text-light">Delete</button></a>
+                                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal<?php echo $row['id'];?>">
+                                                    Edit Customer
+                                                </button>
+
+                                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#myModal_delete<?php echo $row['id'];?>">
+                                                    Delete
+                                                </button>
+                                            
                                             </td>
                                         </tr>
                                         
                                         <?php
+                                    include '../admin/modal_edit_user.php';
+                                    include '../admin/modal_delete_user.php';
+
                                     }
                                 }
+
                            ?>
                            
                         </tbody>

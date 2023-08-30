@@ -9,6 +9,10 @@
  $pword = password_hash($password, PASSWORD_DEFAULT);
  $c_desc = $_POST['cust_desc'];
  $urole = $_POST['role'];
+
+//ITO AY PARA SA GENERATION NG USER ID
+
+
 //GUMAMIT NG TIMESTAMP SA DATABASE FOR AUTOMATIC DATE STAMP UPON DATA INSERT
 
  //query
