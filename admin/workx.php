@@ -59,13 +59,13 @@
         <!--Container Main start-->
         <div class="height-100">
         <div class="container mt-5 mb-3">
+                  
             <div class="row">
-
             <?php
 
             include '../conn.php';
             
-                $sql = "SELECT * FROM customers ORDER BY id DESC";
+                $sql = "SELECT * FROM customers WHERE cust_role = 'Customer' AND cust_status = 'Approved' ORDER BY id DESC";
                 $result = mysqli_query($conn, $sql);
 
                 if($result->num_rows > 0){
@@ -92,12 +92,16 @@
                                     <li class="step"> <div><i class="fas fa-truck"></i></div> Pickup </li> 
                                     <li class="step "> <div><i class="fas fa-folder"></i></div> Finished </li> 
                                 </ul> 
-                               <button class="btn btn-primary">View workx</button>
+                                <button type="button" class="btn btn-info mt-2" data-bs-toggle="modal" data-bs-target="#myModal_works<?php echo $row['id'];?>">
+                                    Add Workx
+                                </button>
+                               <button class="btn btn-primary mt-2">View workx</button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <?php
+       include 'modal_add_workx.php';
 
                          }
                      }
