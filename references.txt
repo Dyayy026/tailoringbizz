@@ -10,3 +10,6 @@ https://elevenstechwebtutorials.com/detail/7/show-dynamic-data-on-modal-popup-us
 
 STYLISTIC CARD FOR WORKX TAB
 https://freefrontend.com/bootstrap-cards/
+
+PROGRESS TRACKING BAR
+https://bbbootstrap.com/snippets/bootstrap-4-bootstrap-4-timeline-order-tracking-step-step-progress-bar-26897417#

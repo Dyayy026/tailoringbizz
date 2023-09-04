@@ -18,6 +18,14 @@
     <link rel="stylesheet" href="../css/workx-style.css">
 
 
+    <!-- PROGRESS BAR -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    
+  </head>
+
+
      <!-- SIDEBAR MENU CDN -->
     <!-- SCRIPTS IS AT THE BOTTOM PART -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
@@ -50,7 +58,6 @@
 
         <!--Container Main start-->
         <div class="height-100">
-        <div class="jumbotron mt-5">
         <div class="container mt-5 mb-3">
             <div class="row">
 
@@ -78,54 +85,31 @@
                         </div>
                         <div class="mt-5">
                             <h3 class="heading"><?php echo $row['cust_fname'] . ' ' . $row['cust_lname'];?><br></h3>
-                            <div class="">
-                                <div class="progress">
-                                    <ul class="stepper">
-                                    <li class="done">
-                                        <div class="item">
-                                        Step1
-                                        </div>
-                                    </li>
-                                    <li class="done">
-                                        <div class="item">
-                                        Step2
-                                        </div>
-                                    </li>
-                                    <li class="wip">
-                                        <div class="item">
-                                        Step3
-                                        </div>
-                                    </li>
-                                    <li class="ready">
-                                        <div class="item">
-                                        Step4
-                                        </div>
-                                    </li>
-                                    </ul>
-                                </div>
-                                <div class="mt-3"> <span class="text1">32 Applied <span class="text2">of 50 capacity</span></span> </div>
+                            <div class="card card-timeline px-2 border-none"> 
+                                <ul class="bs4-order-tracking"> 
+                                    <li class="step active1"> <div><i class="fas fa-user"></i></div> Recieved </li> 
+                                    <li class="step"> <div><i class="fas fa-bread-slice"></i></div> Working </li> 
+                                    <li class="step"> <div><i class="fas fa-truck"></i></div> Pickup </li> 
+                                    <li class="step "> <div><i class="fas fa-folder"></i></div> Finished </li> 
+                                </ul> 
+                               <button class="btn btn-primary">View workx</button>
                             </div>
                         </div>
                     </div>
                 </div>
-               
                 <?php
 
                          }
                      }
 
                 ?>
-                   
-            </div>
         </div>
             
         </div>
     <!--Container Main end-->
     <!-- SIDEBAR END-->
-       
     </div>
 
- <?php include '../admin/modal_add_customer.php';?>
 
     <div class="footer pt-2">
         <p>TailoringBizz &copy2023 Developed by: Arjay Andal</p>
@@ -134,8 +118,9 @@
     <script src="../js/sidebar.js"></script>
 
     <!-- FOR SIDEBAR -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- PROGRESS BAR -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
 </html>
 
