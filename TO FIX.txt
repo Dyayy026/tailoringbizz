@@ -1,1 +1,2 @@
 FIX: generate unique id for column cust_id for customer
+FIX: generate unique id for column garment_id for customer
