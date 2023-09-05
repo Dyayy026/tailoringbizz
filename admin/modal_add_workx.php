@@ -18,6 +18,7 @@
         <div class="row">
                 <div class="col-sm-12"> 
                   <input type="hidden" name="cust_id" value="<?php echo $row['id'];?>">
+                  <input type="hidden" name="custfname" value="<?php echo $_SESSION['username'];?>">
                     <div class="mb-3">
                       <label for="role"  class="form-label"><strong>Garment type:</strong> </label>
                       <select class="form-select" name="gtype">

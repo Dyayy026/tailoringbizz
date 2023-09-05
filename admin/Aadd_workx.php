@@ -9,9 +9,10 @@ include '../conn.php';
     $scharge = $_POST['scharge'];
     $pdate = $_POST['pdate'];
     $gstatus = "Received";
+    $receivedBy = $_POST['custfname'];
 
-    $sql = "INSERT INTO garments(cust_id, garment_id, garment_type, garment_work_desc, garment_type_of_serve, garment_serv_charge, garment_pickup_date, garment_status)
-            VALUES ('$cust_id', '$garment_id', '$gtype', '$wdesc', '$serv_type', '$scharge', '$pdate', '$gstatus')";
+    $sql = "INSERT INTO garments(cust_id, garment_id, garment_type, garment_work_desc, garment_type_of_serve, garment_serv_charge, garment_pickup_date, garment_status, garment_receivedby)
+            VALUES ('$cust_id', '$garment_id', '$gtype', '$wdesc', '$serv_type', '$scharge', '$pdate', '$gstatus', '$receivedBy')";
 
     if($conn->query($sql) === TRUE){
 

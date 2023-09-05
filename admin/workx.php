@@ -1,4 +1,4 @@
-<?php include 'conn.php';?>
+<?php include '../conn.php';?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -62,7 +62,9 @@
             <?php
 
             
-                $sql = "SELECT * FROM customers WHERE cust_role = 'Customer' AND cust_status = 'Approved' ORDER BY id DESC";
+                $sql = "SELECT garments.id, customers.cust_fname, customers.cust_lname, garments.garment_status, garments.garment_recieve_date, garment_pickup_date
+                        FROM garments
+                        INNER JOIN customers ON garments.id = customers.id ORDER BY id DESC";
                 $result = mysqli_query($conn, $sql);
 
                 if($result->num_rows > 0){
@@ -75,13 +77,14 @@
                             <div class="d-flex flex-row align-items-center">
                                 <div class="icon"> <i class="bx bxl-mailchimp"></i> </div>
                                 <div class="ms-2 c-details">
-                                    <h6 class="mb-0"></h6> <span>received date</span>
+                                    <h6 class="mb-0"></h6> <span>Received: <?php echo $row['garment_recieve_date'];?></span>
+                                    <h5 class="mb-0"></h5> <span>Pic-kup: <strong> <?php echo $row['garment_pickup_date'];?></strong></span>
                                 </div>
                             </div>
-                            <div class="badge"> <span>Status</span> </div>
+                            <div class="badge"> <span><?php echo $row['garment_status'];?></span> </div>
                         </div>
                         <div class="mt-5">
-                            <h3 class="heading"><?php echo $row['cust_fname'] . ' ' . $row['cust_lname'];?><br></h3>
+                            <h3 class="heading"><?php echo $row['cust_fname'] ." ". $row['cust_lname'];?></h3>
                             <div class="card card-timeline px-2 border-none"> 
                                 <ul class="bs4-order-tracking"> 
                                     <li class="step active1"> <div><i class="fas fa-user"></i></div> Recieved </li> 
