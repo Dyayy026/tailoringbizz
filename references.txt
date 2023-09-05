@@ -13,3 +13,6 @@ https://freefrontend.com/bootstrap-cards/
 
 PROGRESS TRACKING BAR
 https://bbbootstrap.com/snippets/bootstrap-4-bootstrap-4-timeline-order-tracking-step-step-progress-bar-26897417#
+
+SESSIONS IN LOGIN AND LOGOUT
+https://www.tutorialspoint.com/php/php_mysql_login.htm

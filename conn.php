@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $servename = "localhost";
 $username = "root";
 $password = "";

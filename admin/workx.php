@@ -1,6 +1,4 @@
-<?php
-    session_start();
-?>
+<?php include 'conn.php';?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -50,7 +48,7 @@
                         <a href="../admin/catalog.php" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Catalog</span> </a> 
                         <a href="../admin/customer_comp.php" class="nav_link"> <i class='bx bx-message-square-detail nav_icon'></i> <span class="nav_name">Customer Complain</span> </a>
                         <a href="#" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Stats</span> </a> </div>
-                </div> <a href="#" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
+                </div> <a href="../logout.php" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
             </nav>
         </div>
 
@@ -63,7 +61,6 @@
             <div class="row">
             <?php
 
-            include '../conn.php';
             
                 $sql = "SELECT * FROM customers WHERE cust_role = 'Customer' AND cust_status = 'Approved' ORDER BY id DESC";
                 $result = mysqli_query($conn, $sql);

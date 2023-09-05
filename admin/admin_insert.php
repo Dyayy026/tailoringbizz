@@ -8,12 +8,13 @@
  $password = $_POST['pword'];
  $pword = password_hash($password, PASSWORD_DEFAULT);
  $c_desc = $_POST['cust_desc'];
+ $cstatus = "Approved";
  $urole = $_POST['role'];
 //GUMAMIT NG TIMESTAMP SA DATABASE FOR AUTOMATIC DATE STAMP UPON DATA INSERT
 
  //query
- $sql = "INSERT INTO customers (cust_fname, cust_lname, cust_address, cust_cnumber, cust_password, cust_desc, cust_role) 
-        VALUES ('$fname', '$lname', '$address', '$cnumber', '$pword', '$c_desc', '$urole')";
+ $sql = "INSERT INTO customers (cust_fname, cust_lname, cust_address, cust_cnumber, cust_password, cust_desc, cust_role, cust_status) 
+        VALUES ('$fname', '$lname', '$address', '$cnumber', '$pword', '$c_desc', '$urole', '$cstatus')";
 
 if($conn->query($sql) === TRUE){
 

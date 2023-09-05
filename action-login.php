@@ -3,7 +3,6 @@
 include('conn.php');
 
 
-
 // Handle login form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["fname"];
