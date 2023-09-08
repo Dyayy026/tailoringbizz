@@ -65,12 +65,14 @@
         <div class="container mt-5 mb-3">
                   
             <div class="row">
+                  <!-- Button to Open the Modal -->
+                  <button type="button" class="btn btn-info mt-5" data-bs-toggle="modal" data-bs-target="#myModal_works2">
+                    Add Workx
+                    </button>
             <?php
-
-            
-                $sql = "SELECT garments.id, customers.cust_fname, customers.cust_lname, garments.garment_status, garments.garment_recieve_date, garment_pickup_date
+                $sql = "SELECT garments.cust_id, customers.cust_fname, customers.cust_lname, garments.garment_status, garments.garment_recieve_date, garment_pickup_date
                         FROM garments
-                        INNER JOIN customers ON garments.id = customers.id ORDER BY id DESC";
+                        INNER JOIN customers ON garments.cust_id = customers.cust_id ORDER BY cust_id DESC";
                 $result = mysqli_query($conn, $sql);
 
                 if($result->num_rows > 0){
@@ -116,6 +118,8 @@
         </div>
             
         </div>
+    <!-- PARA TO SA ADD WORKX BUTTON -->
+    <?php  include 'modal_add_workx2.php';?> 
     <!--Container Main end-->
     <!-- SIDEBAR END-->
     </div>

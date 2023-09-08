@@ -56,7 +56,6 @@
             <div class="row">
                 <div class="col-md-12">
                      <h1>Approved Users</h1>
-                    <!-- Button to Open the Modal -->
                    <!-- Button to Open the Modal -->
                    <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#myModal">
                     Add Customer

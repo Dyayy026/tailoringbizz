@@ -12,8 +12,8 @@
  $urole = $_POST['role'];
 
 //ITO AY PARA SA GENERATION NG USER ID
-$myuid1 = mt_rand(000,999);
-$myuid2 = mt_rand(000,999);
+$myuid1 = mt_rand(111,999);
+$myuid2 = mt_rand(111,999);
 $cust_id = $myuid1. '-' .$myuid2;
 
 
