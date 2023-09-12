@@ -24,6 +24,7 @@
                       <select class="form-select" name="gtype">
                           <option value="Clothing">Clothing</option>
                           <option value="Pants">Pants</option>
+                          <option value="Uniform">Uniform</option>
                           <option value="Curtains">Curtains</option>
                           <option value="Rugs">Rugs</option>
                           <option value="Pillowbedsheet">Pillow/Bedsheet</option>

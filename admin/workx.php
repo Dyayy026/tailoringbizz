@@ -66,12 +66,12 @@
                   
             <div class="row">
                   <!-- Button to Open the Modal -->
-                  <button type="button" class="btn btn-info mt-5" data-bs-toggle="modal" data-bs-target="#myModal_works2">
+                  <button type="button" class="btn btn-info mt-4" data-bs-toggle="modal" data-bs-target="#myModal_works2">
                     Add Workx
                     </button>
             <?php
                 $sql = "SELECT garments.cust_id, customers.cust_fname, customers.cust_lname, garments.garment_status, garments.garment_recieve_date, 
-                        garment_pickup_date, garment_id, garment_type, garment_receivedby
+                        garment_pickup_date, garment_id, garment_type, garment_receivedby, garment_serv_charge
                         FROM garments
                         INNER JOIN customers 
                         ON garments.cust_id = customers.id 
@@ -83,7 +83,7 @@
                     while($row = $result->fetch_assoc()){
                         ?>
             
-                <div class="col-md-4 mt-5">
+                <div class="col-md-4 mt-3">
                     <div class="card p-3 mb-2">
                         <div class="d-flex justify-content-between">
                             <div class="d-flex flex-row align-items-center">
@@ -137,6 +137,7 @@
                                   
                                 </ul> 
                                 <p><strong>Garment Id: <?php echo $row['garment_id'];?></strong></p>
+                                <h6>Balance: ₱ <span class="text-danger"><?php echo $row['garment_serv_charge'];?></span></h6>
                                 <button type="button" class="btn btn-info mt-2" data-bs-toggle="modal" data-bs-target="#myModal_works<?php echo $row['cust_id'];?>">
                                     Add Workx
                                 </button>
@@ -162,9 +163,7 @@
     </div>
 
 
-    <div class="footer pt-2">
-        <p>TailoringBizz &copy2023 Developed by: Arjay Andal</p>
-    </div>
+
 
     <script src="../js/sidebar.js"></script>
 
