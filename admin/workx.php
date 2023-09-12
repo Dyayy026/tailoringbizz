@@ -73,7 +73,10 @@
                 $sql = "SELECT garments.cust_id, customers.cust_fname, customers.cust_lname, garments.garment_status, garments.garment_recieve_date, 
                         garment_pickup_date, garment_id, garment_type, garment_receivedby
                         FROM garments
-                        INNER JOIN customers ON garments.cust_id = customers.id ORDER BY garments.cust_id DESC";
+                        INNER JOIN customers 
+                        ON garments.cust_id = customers.id 
+                        ORDER BY garments.cust_id 
+                        AND garments.garment_status = 'Received' DESC";
                 $result = mysqli_query($conn, $sql);
 
                 if($result->num_rows > 0){
@@ -97,10 +100,41 @@
                             <h6><?php echo $row['cust_fname'] . " " . $row['cust_lname'];?></h6>
                             <div class="card card-timeline px-2 border-none"> 
                                 <ul class="bs4-order-tracking"> 
-                                    <li class="step active1"> <div><i class="fas fa-user"></i></div> Recieved </li> 
-                                    <li class="step"> <div><i class="fas fa-bread-slice"></i></div> Working </li> 
-                                    <li class="step"> <div><i class="fas fa-truck"></i></div> Pickup </li> 
-                                    <li class="step "> <div><i class="fas fa-folder"></i></div> Finished </li> 
+                                    <?php
+                                        if($row['garment_status'] == "Received"){
+                                            ?>
+                                            <li class="step active1"> <div><i class="fas fa-user"></i></div> Recieved </li> 
+                                            <li class="step"> <div><i class="fas fa-bread-slice"></i></div> Working </li> 
+                                            <li class="step"> <div><i class="fas fa-truck"></i></div> Pickup </li> 
+                                            <li class="step"> <div><i class="fas fa-folder"></i></div> Finished </li> 
+                                            <?php
+                                        }
+                                        else if($row['garment_status'] == "Working"){
+                                            ?>
+                                            <li class="step active1"> <div><i class="fas fa-user"></i></div> Recieved </li> 
+                                            <li class="step active1"> <div><i class="fas fa-bread-slice"></i></div> Working </li> 
+                                            <li class="step"> <div><i class="fas fa-truck"></i></div> Pickup </li> 
+                                            <li class="step"> <div><i class="fas fa-folder"></i></div> Finished </li> 
+                                            <?php
+                                        }
+                                        else if($row['garment_status'] == "Pickup"){
+                                            ?>
+                                            <li class="step active1"> <div><i class="fas fa-user"></i></div> Recieved </li> 
+                                            <li class="step active1"> <div><i class="fas fa-bread-slice"></i></div> Working </li> 
+                                            <li class="step active1"> <div><i class="fas fa-truck"></i></div> Pickup </li> 
+                                            <li class="step"> <div><i class="fas fa-folder"></i></div> Finished </li> 
+                                            <?php
+                                        }
+                                        else if($row['garment_status'] == "Finished"){
+                                            ?>
+                                            <li class="step active1"> <div><i class="fas fa-user"></i></div> Recieved </li> 
+                                            <li class="step active1"> <div><i class="fas fa-bread-slice"></i></div> Working </li> 
+                                            <li class="step active1"> <div><i class="fas fa-truck"></i></div> Pickup </li> 
+                                            <li class="step active1"> <div><i class="fas fa-folder"></i></div> Finished </li> 
+                                            <?php
+                                        }
+                                    ?>
+                                  
                                 </ul> 
                                 <p><strong>Garment Id: <?php echo $row['garment_id'];?></strong></p>
                                 <button type="button" class="btn btn-info mt-2" data-bs-toggle="modal" data-bs-target="#myModal_works<?php echo $row['cust_id'];?>">
