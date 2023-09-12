@@ -71,7 +71,7 @@
                     </button>
             <?php
                 $sql = "SELECT garments.cust_id, customers.cust_fname, customers.cust_lname, garments.garment_status, garments.garment_recieve_date, 
-                        garment_pickup_date, garment_id, garment_type, garment_receivedby, garment_serv_charge
+                        garment_pickup_date, garment_id, garment_type, garment_receivedby, garment_serv_charge, garment_work_desc, garment_type_of_serve
                         FROM garments
                         INNER JOIN customers 
                         ON garments.cust_id = customers.id 
@@ -141,13 +141,16 @@
                                 <button type="button" class="btn btn-info mt-2" data-bs-toggle="modal" data-bs-target="#myModal_works<?php echo $row['cust_id'];?>">
                                     Add Workx
                                 </button>
-                               <button class="btn btn-primary mt-2">View details</button>
+                                <button type="button" class="btn btn-success mt-2" data-bs-toggle="modal" data-bs-target="#myModal_view_details<?php echo $row['cust_id'];?>">
+                                    View Details
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <?php
        include 'modal_add_workx.php';
+       include 'modal_view_details.php';
 
                          }
                      }
