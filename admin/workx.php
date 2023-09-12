@@ -70,7 +70,8 @@
                     Add Workx
                     </button>
             <?php
-                $sql = "SELECT garments.cust_id, customers.cust_fname, customers.cust_lname, garments.garment_status, garments.garment_recieve_date, garment_pickup_date
+                $sql = "SELECT garments.cust_id, customers.cust_fname, customers.cust_lname, garments.garment_status, garments.garment_recieve_date, 
+                        garment_pickup_date, garment_id, garment_type, garment_receivedby
                         FROM garments
                         INNER JOIN customers ON garments.cust_id = customers.id ORDER BY garments.cust_id DESC";
                 $result = mysqli_query($conn, $sql);
@@ -89,10 +90,11 @@
                                     <h5 class="mb-0"></h5> <span>Pic-kup: <strong> <?php echo $row['garment_pickup_date'];?></strong></span>
                                 </div>
                             </div>
-                            <div class="badge"> <span><?php echo $row['garment_status'];?></span> </div>
+                            <div class="badge"><span>Sewer: <?php echo $row['garment_receivedby'];?></span> </div>
                         </div>
                         <div class="mt-5">
-                            <h3 class="heading"><?php echo $row['cust_fname'] ." ". $row['cust_lname'];?></h3>
+                            <h3 class="heading"><?php echo $row['garment_type'];?></h3>
+                            <h6><?php echo $row['cust_fname'] . " " . $row['cust_lname'];?></h6>
                             <div class="card card-timeline px-2 border-none"> 
                                 <ul class="bs4-order-tracking"> 
                                     <li class="step active1"> <div><i class="fas fa-user"></i></div> Recieved </li> 
@@ -100,11 +102,11 @@
                                     <li class="step"> <div><i class="fas fa-truck"></i></div> Pickup </li> 
                                     <li class="step "> <div><i class="fas fa-folder"></i></div> Finished </li> 
                                 </ul> 
-                                
+                                <p><strong>Garment Id: <?php echo $row['garment_id'];?></strong></p>
                                 <button type="button" class="btn btn-info mt-2" data-bs-toggle="modal" data-bs-target="#myModal_works<?php echo $row['cust_id'];?>">
                                     Add Workx
                                 </button>
-                               <button class="btn btn-primary mt-2">View workx</button>
+                               <button class="btn btn-primary mt-2">View details</button>
                             </div>
                         </div>
                     </div>
