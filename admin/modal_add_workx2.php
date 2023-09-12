@@ -13,7 +13,7 @@
       <!-- Modal body -->
       <div class="modal-body">
       <div class="container mt-5">
-        <form action="Aadd_workx.php" method="POST">
+        <form action="Aadd_workx2.php" method="POST">
         <div class="row">
                 <div class="col-sm-12"> 
                   
@@ -60,10 +60,10 @@
                                     while ($category = mysqli_fetch_array(
                                             $all_categories,MYSQLI_ASSOC)):;
                                 ?>
-                                    <option value="<?php echo $category["cust_id"];
+                                    <option value="<?php echo $category["id"]; //kelangan talaga ay primary key na id di pwedeng ibang column na di primary
                                         // The value we usually set is the primary key
-                                    ?>">
-                                        <?php echo $category["cust_fname"];
+                                        ?>">
+                                        <?php echo $category["cust_fname"]
                                             // To show the category name to the user
                                         ?>
                                     </option>

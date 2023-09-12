@@ -10,11 +10,15 @@
  $c_desc = $_POST['cust_desc'];
  $cstatus = "Approved";
  $urole = $_POST['role'];
-//GUMAMIT NG TIMESTAMP SA DATABASE FOR AUTOMATIC DATE STAMP UPON DATA INSERT
+
+ //ITO AY PARA SA GENERATION NG USER ID
+ $myuid1 = mt_rand(111,999);
+ $myuid2 = mt_rand(111,999);
+ $cust_id = $myuid1.$myuid2;
 
  //query
- $sql = "INSERT INTO customers (cust_fname, cust_lname, cust_address, cust_cnumber, cust_password, cust_desc, cust_role, cust_status) 
-        VALUES ('$fname', '$lname', '$address', '$cnumber', '$pword', '$c_desc', '$urole', '$cstatus')";
+ $sql = "INSERT INTO customers (cust_id, cust_fname, cust_lname, cust_address, cust_cnumber, cust_password, cust_desc, cust_role, cust_status) 
+        VALUES ('$cust_id','$fname', '$lname', '$address', '$cnumber', '$pword', '$c_desc', '$urole', '$cstatus')";
 
 if($conn->query($sql) === TRUE){
 

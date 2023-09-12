@@ -14,7 +14,7 @@
 //ITO AY PARA SA GENERATION NG USER ID
 $myuid1 = mt_rand(111,999);
 $myuid2 = mt_rand(111,999);
-$cust_id = $myuid1. '-' .$myuid2;
+$cust_id = $myuid1.$myuid2;
 
 
 //GUMAMIT NG TIMESTAMP SA DATABASE FOR AUTOMATIC DATE STAMP UPON DATA INSERT
