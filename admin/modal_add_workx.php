@@ -1,7 +1,7 @@
 
 
 <!-- The Modal -->
-<div class="modal fade" id="myModal_works<?php echo $row['id'];?>">
+<div class="modal fade" id="myModal_works<?php echo $row['cust_id'];?>">
   <div class="modal-dialog modal-m">
     <div class="modal-content">
 
@@ -17,12 +17,13 @@
         <form action="Aadd_workx.php" method="POST">
         <div class="row">
                 <div class="col-sm-12"> 
-                  <input type="hidden" name="cust_id" value="<?php echo $row['id'];?>">
+                  <input type="hidden" name="cust_id" value="<?php echo $row['cust_id'];?>">
                   <input type="hidden" name="custfname" value="<?php echo $_SESSION['username'];?>">
                     <div class="mb-3">
                       <label for="role"  class="form-label"><strong>Garment type:</strong> </label>
                       <select class="form-select" name="gtype">
                           <option value="Clothing">Clothing</option>
+                          <option value="Pants">Pants</option>
                           <option value="Curtains">Curtains</option>
                           <option value="Rugs">Rugs</option>
                           <option value="Pillowbedsheet">Pillow/Bedsheet</option>

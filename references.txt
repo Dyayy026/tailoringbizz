@@ -19,3 +19,6 @@ https://www.tutorialspoint.com/php/php_mysql_login.htm
 
 DROPDOWN LIST VALUES FROM DATABASE
 https://www.geeksforgeeks.org/create-a-drop-down-list-that-options-fetched-from-a-mysql-database-in-php/
+
+FOREIGH KEY AND TABLE RELATIONS
+https://www.youtube.com/watch?v=7HTAX0dfJqg

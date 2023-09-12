@@ -72,7 +72,7 @@
             <?php
                 $sql = "SELECT garments.cust_id, customers.cust_fname, customers.cust_lname, garments.garment_status, garments.garment_recieve_date, garment_pickup_date
                         FROM garments
-                        INNER JOIN customers ON garments.cust_id = customers.cust_id ORDER BY garments.cust_id DESC";
+                        INNER JOIN customers ON garments.cust_id = customers.id ORDER BY garments.cust_id DESC";
                 $result = mysqli_query($conn, $sql);
 
                 if($result->num_rows > 0){
@@ -100,6 +100,7 @@
                                     <li class="step"> <div><i class="fas fa-truck"></i></div> Pickup </li> 
                                     <li class="step "> <div><i class="fas fa-folder"></i></div> Finished </li> 
                                 </ul> 
+                                
                                 <button type="button" class="btn btn-info mt-2" data-bs-toggle="modal" data-bs-target="#myModal_works<?php echo $row['cust_id'];?>">
                                     Add Workx
                                 </button>
