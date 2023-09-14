@@ -1,6 +1,6 @@
 
 <!-- The Modal -->
-<div class="modal fade" id="myModal_view_details<?php echo $row['id'];?>">
+<div class="modal fade" id="myModal_view_details<?php echo $row['garment_id'];?>">
   <div class="modal-dialog modal-m">
     <div class="modal-content">
 
@@ -50,7 +50,7 @@
                       </select>
                     </div>
                 </div>
-                <input type="text" name = "edit_id" value = "<?php echo $row['id'];?>">
+                <input type="hidden" name = "edit_id" value = "<?php echo $row['garment_id'];?>">
             <button type="submit" class="btn btn-primary mt-5">Update Workx</button>
         </div>
         </form>

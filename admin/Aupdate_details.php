@@ -16,7 +16,7 @@ $sql = "UPDATE garments
         garment_serv_charge = '$scharge',
         garment_pickup_date = '$pdate',
         garment_status = '$gstatus'
-        WHERE id = $id ";
+        WHERE garment_id = $id ";
 
 if($conn->query($sql) === TRUE){
 
