@@ -70,8 +70,10 @@
                     Add Workx
                     </button>
             <?php
-                $sql = "SELECT garments.id, garments.cust_id, customers.cust_fname, customers.cust_lname, garments.garment_status, garments.garment_recieve_date, 
-                        garment_pickup_date, garment_id, garment_type, garment_receivedby, garment_serv_charge, garment_work_desc, garment_type_of_serve
+                $sql = "SELECT customers.cust_balance, garments.id, garments.cust_id, customers.cust_fname, 
+                        customers.cust_lname, garments.garment_status, garments.garment_recieve_date, garment_down,
+                        garment_pickup_date, garment_id, garment_type, garment_receivedby, garment_serv_charge,
+                        garment_bal, garment_work_desc, garment_type_of_serve
                         FROM garments
                         INNER JOIN customers 
                         ON garments.cust_id = customers.id 
@@ -138,7 +140,9 @@
                                   
                                 </ul> 
                                 <p><strong>Garment Id: <?php echo $row['garment_id'];?></strong></p>
-                                <h6>Balance: ₱ <span class="text-danger"><?php echo $row['garment_serv_charge'];?></span></h6>
+                                <h6>Service Charge: ₱ <span class="text-danger"><?php echo $row['garment_serv_charge'];?></span></h6>
+                                <h6>Down payment: ₱ <span class="text-danger"><?php echo $row['garment_down'];?></span></h6>
+                                <h6>Balance: ₱ <span class="text-danger"><?php echo $row['garment_bal'];?></span></h6>
                                 <button type="button" class="btn btn-info mt-2" data-bs-toggle="modal" data-bs-target="#myModal_works<?php echo $row['cust_id'];?>">
                                     Add Workx
                                 </button>

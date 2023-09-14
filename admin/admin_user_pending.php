@@ -70,13 +70,13 @@
                     <table class="table table-dark mt-5">
                         <thead>
                             <tr>
+                                <th>Customer Id</th>
                                 <th>Customer Name</th>
                                 <th>Contact Number</th>
                                 <th>Description</th>
                                 <th>Address</th>
                                 <th>Role</th>
                                 <th>Status</th>
-                                <th>Balance</th>
                                 <th>Action</th>
                             </tr>
                             
@@ -91,13 +91,13 @@
                                     while($row = $result->fetch_assoc()){
                                         ?>
                                         <tr>
+                                            <td><?php echo $row['cust_id'];?></td>
                                             <td><?php echo $row['cust_fname'] ." ". $row['cust_lname'];?></td>
                                             <td><?php echo $row['cust_cnumber'];?></td>
                                             <td><?php echo $row['cust_desc'];?></td>
                                             <td><?php echo $row['cust_address'];?></td>
                                             <td><?php echo $row['cust_role'];?></td>
                                             <td style="color: mediumslateblue;"><?php echo $row['cust_status'];?></td>
-                                            <td><?php echo $row['cust_balance'];?></td>
                                             <td>
 
                                             <a href="#id=<?php echo $row['id'];?>">

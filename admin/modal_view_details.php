@@ -33,7 +33,11 @@
                     </div>
                     <div class="mb-3 mt-3">
                         <label for="firstname" class="form-label"><strong>Service Charge:</strong></label>
-                        <input type="number" class="form-control" id="scharge" value="<?php echo $row['garment_serv_charge'];?>" name="scharge" required>
+                        <input type="number" class="form-control" id="scharge" value="<?php echo $row['garment_serv_charge'];?>" name="scharge" >
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="firstname" class="form-label"><strong>Down payment:</strong></label>
+                        <input type="number" class="form-control" id="scharge" value="<?php echo $row['garment_bal'];?>" name="dpayment" >
                     </div>
                     <div class="mb-3 mt-3">
                         <label for="firstname" class="form-label"><strong>Pick up date:</strong></label>
