@@ -124,7 +124,6 @@
     </div>
 
     <script src="../js/sidebar.js"></script>
-    <?php include('modal_add_user.php');?>
 
     <!-- FOR SIDEBAR -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"></script>
