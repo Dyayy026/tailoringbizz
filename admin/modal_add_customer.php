@@ -23,7 +23,7 @@
                     </div>
                     <div class="mb-3 mt-3">
                         <label for="firstname" class="form-label"><strong>Lastname:</strong> </label>
-                        <input type="text" class="form-control" id="lname" placeholder="Enter lastname" name="lname" required>
+                        <input type="text" class="form-control" id="lname" placeholder="Enter lastname" name="lname">
                     </div>
                     <div class="mb-3 mt-3">
                         <label for="firstname" class="form-label"><strong>Address:</strong> </label>

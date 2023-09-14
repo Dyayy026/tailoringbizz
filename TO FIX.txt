@@ -1,1 +1,3 @@
-FIX: generate unique id for column cust_id for customer
+To Fix:
+
+idouble check ang edit function ni works, tignan kung magwowork ang garment_id kung aalisin na ang "-" sa format

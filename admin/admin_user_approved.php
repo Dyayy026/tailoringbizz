@@ -1,5 +1,9 @@
 <?php
-    session_start();
+    include'../conn.php';
+
+    if(!isset($_SESSION['username'])){
+        header("location:../login.php");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +44,7 @@
                         <a href="../admin/catalog.php" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Catalog</span> </a> 
                         <a href="../admin/customer_comp.php" class="nav_link"> <i class='bx bx-message-square-detail nav_icon'></i> <span class="nav_name">Customer Complain</span> </a>
                         <a href="#" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Stats</span> </a> </div>
-                </div> <a href="#" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
+                </div> <a href="../logout.php" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
             </nav>
         </div>
 
@@ -52,7 +56,6 @@
             <div class="row">
                 <div class="col-md-12">
                      <h1>Approved Users</h1>
-                    <!-- Button to Open the Modal -->
                    <!-- Button to Open the Modal -->
                    <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#myModal">
                     Add Customer
@@ -65,20 +68,19 @@
                     <table class="table table-dark mt-5">
                         <thead>
                             <tr>
+                                <th>Customer Id</th>
                                 <th>Customer Name</th>
                                 <th>Contact Number</th>
                                 <th>Description</th>
                                 <th>Address</th>
                                 <th>Role</th>
                                 <th>Status</th>
-                                <th>Balance</th>
                                 <th>Action</th>
                             </tr>
                             
                         </thead>
                         <tbody>
                             
-                           <?php require '../conn.php';?>
                            <?php 
                                 $sql = "SELECT * FROM customers WHERE cust_role = 'Customer' AND cust_status = 'Approved'";
                                 $result = $conn->query($sql);
@@ -87,13 +89,13 @@
                                     while($row = $result->fetch_assoc()){
                                         ?>
                                         <tr>
+                                            <td><?php echo $row['cust_id'];?></td>
                                             <td><?php echo $row['cust_fname'] ." ". $row['cust_lname'];?></td>
                                             <td><?php echo $row['cust_cnumber'];?></td>
                                             <td><?php echo $row['cust_desc'];?></td>
                                             <td><?php echo $row['cust_address'];?></td>
                                             <td><?php echo $row['cust_role'];?></td>
                                             <td style="color: blueviolet;"><?php echo $row['cust_status'];?></td>
-                                            <td><?php echo $row['cust_balance'];?></td>
                                             <td>
                                                 <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#myModal_disapprove<?php echo $row['id'];?>">
                                                     Disapprove
