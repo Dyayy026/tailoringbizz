@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 12, 2023 at 01:05 PM
+-- Generation Time: Sep 16, 2023 at 03:56 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -61,10 +61,10 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`id`, `cust_id`, `cust_fname`, `cust_lname`, `cust_address`, `cust_cnumber`, `cust_password`, `cust_desc`, `cust_role`, `cust_status`, `cust_balance`, `cust_date_created`) VALUES
-(1, 258, 'test ', 'random', 'laguna', '789456', '$2y$10$AVrQ8wjelsdLQZdJZhphY.Kz897WunroskTX.8CKbtRRaFJEpxSBq', 'testing random input value', 'Customer', 'Pending', 0, '2023-09-08'),
-(2, 437, 'Arjay', 'Andal', 'Sta. Cruz, Laguna', '09076730151', '$2y$10$XoFvApebiZmZNQ6G4zpk8uRsc3Ql7S3/9cfE47fDoER8wxyoSOETi', 'Admin', 'Admin', 'Approved', 0, '2023-09-08'),
-(3, 709, 'Hannah Cristel', 'Lazanas', 'Pagsanjan, Laguna', '1245679', '$2y$10$0EnjqrC83KrzMEocobZAw.Jbv.Y652zY8Qe0/cNfcJ6jjiPu.vc7m', 'customer 1', 'Customer', 'Approved', 0, '2023-09-08'),
-(4, 439, 'Armayne ', 'Arquiza', 'Liliw, Laguna', '456798', '$2y$10$ua1Qqn23HCESx9mj7DB79.EpSlEvJu8A/d.ijbgHc9DER6hUupr7W', 'customer 2', 'Customer', 'Approved', 0, '2023-09-08');
+(8, 790502, 'Arjay', 'Andal', 'Sta Cruz', '09076730151', '$2y$10$MyhgY1MLEESA1r0dwmvQWe.l2O3hUM56HrijGefZSOfgbPGr2i9Ai', 'Admin', 'Admin', 'Approved', 0, '2023-09-12'),
+(14, 928560, 'Nida', 'Giwi', 'Patimbao', '09104319106', '$2y$10$CcQCPzolAW7rQTkhI2GkQexHgCregnA7N0o7ZcXUcfB3gKB6n6qxq', 'Regular', 'Customer', 'Approved', 0, '2023-09-12'),
+(16, 721739, 'Nash', '', 'Sta. Cruz', '09972163401', '$2y$10$12LMQrLgjJSkaV/HkRjCLO0r5UD.MohvWZh1KOLw65TnnxatbtFr2', 'Dra. Cruz', 'Customer', 'Approved', 0, '2023-09-14'),
+(17, 653686, 'Arnie', 'Herrera', 'Bubukal', '09254532087', '$2y$10$adXkcFPlJ00mR1kdaM9jq.rtJOhY64NW0fnt.uIdgYxVsa8IP/zGK', 'RTC employee', 'Customer', 'Approved', 0, '2023-09-14');
 
 -- --------------------------------------------------------
 
@@ -81,6 +81,8 @@ CREATE TABLE `garments` (
   `garment_work_desc` varchar(255) NOT NULL,
   `garment_type_of_serve` varchar(255) NOT NULL,
   `garment_serv_charge` varchar(255) NOT NULL,
+  `garment_down` int(255) NOT NULL,
+  `garment_bal` int(255) NOT NULL,
   `garment_recieve_date` date NOT NULL DEFAULT current_timestamp(),
   `garment_pickup_date` date NOT NULL,
   `garment_status` varchar(255) NOT NULL
@@ -90,10 +92,36 @@ CREATE TABLE `garments` (
 -- Dumping data for table `garments`
 --
 
-INSERT INTO `garments` (`id`, `cust_id`, `garment_id`, `garment_receivedby`, `garment_type`, `garment_work_desc`, `garment_type_of_serve`, `garment_serv_charge`, `garment_recieve_date`, `garment_pickup_date`, `garment_status`) VALUES
-(13, 439, '466-8', '', 'Clothing', 'repair all', 'Repair', '100', '2023-09-08', '2023-09-09', 'Received'),
-(19, 0, '293-992', '', 'Curtains', 'make it 4 panels', 'Repair', '250', '2023-09-12', '2023-09-14', 'Received'),
-(20, 3, '493-199', 'Arjay', 'Clothing', 'test id', 'Repair', '50', '2023-09-12', '2023-09-14', 'Received');
+INSERT INTO `garments` (`id`, `cust_id`, `garment_id`, `garment_receivedby`, `garment_type`, `garment_work_desc`, `garment_type_of_serve`, `garment_serv_charge`, `garment_down`, `garment_bal`, `garment_recieve_date`, `garment_pickup_date`, `garment_status`) VALUES
+(1, 14, '669434', 'Arjay', 'Uniform', 'LSHS 2x', 'Full Tailor', '1000', 500, 500, '2023-09-14', '2023-09-15', 'Working'),
+(2, 16, '631367', 'Arjay', 'Clothing', 'white & black dress, -1 1/2 both sides armhole', 'Repair', '150', 0, 0, '2023-09-14', '2023-09-16', 'Received'),
+(3, 17, '392871', 'Arjay', 'Clothing', 'basic repairs', 'Repair', '00', 0, 0, '2023-09-14', '2023-09-17', 'Working'),
+(4, 17, '681549', 'Arjay', 'Rugs', 'aayusin lang ang gupit sa gilid', 'Repair', '30', 0, 0, '2023-09-14', '2023-09-17', 'Working');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `images`
+--
+
+CREATE TABLE `images` (
+  `id` int(11) NOT NULL,
+  `file_name` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `uploaded_on` datetime NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `images`
+--
+
+INSERT INTO `images` (`id`, `file_name`, `title`, `description`, `uploaded_on`, `status`) VALUES
+(1, 'Screenshot (12).png', 'test title', 'sample title', '2023-09-16 21:21:05', 1),
+(2, 'Screenshot (8).png', 'image black', 'dark images screenshot', '2023-09-16 21:21:54', 1),
+(4, 'Screenshot (8).png', 'image extra', 'extra image that is uploaded for testing purpose only', '2023-09-16 21:36:50', 1),
+(5, 'Screenshot (8).png', 'image extra', 'extra image that is uploaded for testing purpose only', '2023-09-16 21:36:52', 1);
 
 -- --------------------------------------------------------
 
@@ -144,6 +172,13 @@ ALTER TABLE `customers`
 -- Indexes for table `garments`
 --
 ALTER TABLE `garments`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `cust_id` (`cust_id`);
+
+--
+-- Indexes for table `images`
+--
+ALTER TABLE `images`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -166,19 +201,35 @@ ALTER TABLE `concerns`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `garments`
 --
 ALTER TABLE `garments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `images`
+--
+ALTER TABLE `images`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `measurements`
 --
 ALTER TABLE `measurements`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `garments`
+--
+ALTER TABLE `garments`
+  ADD CONSTRAINT `garments_ibfk_1` FOREIGN KEY (`cust_id`) REFERENCES `customers` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

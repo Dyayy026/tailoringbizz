@@ -1,3 +1,4 @@
 To Fix:
 
-idouble check ang edit function ni works, tignan kung magwowork ang garment_id kung aalisin na ang "-" sa format
+idouble check ang edit function ni works, tignan kung magwowork ang garment_id kung aalisin na ang "-" sa format (done)
+fix adding image into catalog tab
