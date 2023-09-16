@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 14, 2023 at 03:48 PM
+-- Generation Time: Sep 16, 2023 at 03:56 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -20,21 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `tailoringbizz`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `catalog`
---
-
-CREATE TABLE `catalog` (
-  `id` int(11) NOT NULL,
-  `cat_id` varchar(255) NOT NULL,
-  `image` varchar(255) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `description` varchar(255) NOT NULL,
-  `created_at` datetime(6) NOT NULL DEFAULT current_timestamp(6)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -116,6 +101,31 @@ INSERT INTO `garments` (`id`, `cust_id`, `garment_id`, `garment_receivedby`, `ga
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `images`
+--
+
+CREATE TABLE `images` (
+  `id` int(11) NOT NULL,
+  `file_name` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `uploaded_on` datetime NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `images`
+--
+
+INSERT INTO `images` (`id`, `file_name`, `title`, `description`, `uploaded_on`, `status`) VALUES
+(1, 'Screenshot (12).png', 'test title', 'sample title', '2023-09-16 21:21:05', 1),
+(2, 'Screenshot (8).png', 'image black', 'dark images screenshot', '2023-09-16 21:21:54', 1),
+(4, 'Screenshot (8).png', 'image extra', 'extra image that is uploaded for testing purpose only', '2023-09-16 21:36:50', 1),
+(5, 'Screenshot (8).png', 'image extra', 'extra image that is uploaded for testing purpose only', '2023-09-16 21:36:52', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `measurements`
 --
 
@@ -147,12 +157,6 @@ CREATE TABLE `measurements` (
 --
 
 --
--- Indexes for table `catalog`
---
-ALTER TABLE `catalog`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `concerns`
 --
 ALTER TABLE `concerns`
@@ -172,6 +176,12 @@ ALTER TABLE `garments`
   ADD KEY `cust_id` (`cust_id`);
 
 --
+-- Indexes for table `images`
+--
+ALTER TABLE `images`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `measurements`
 --
 ALTER TABLE `measurements`
@@ -180,12 +190,6 @@ ALTER TABLE `measurements`
 --
 -- AUTO_INCREMENT for dumped tables
 --
-
---
--- AUTO_INCREMENT for table `catalog`
---
-ALTER TABLE `catalog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `concerns`
@@ -206,6 +210,12 @@ ALTER TABLE `garments`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `images`
+--
+ALTER TABLE `images`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `measurements`
 --
 ALTER TABLE `measurements`
@@ -214,12 +224,6 @@ ALTER TABLE `measurements`
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `catalog`
---
-ALTER TABLE `catalog`
-  ADD CONSTRAINT `catalog_ibfk_1` FOREIGN KEY (`id`) REFERENCES `customers` (`id`);
 
 --
 -- Constraints for table `garments`
