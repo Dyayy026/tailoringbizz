@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="../css/index-style.css">
     <link rel="stylesheet" href="../css/side-bar.css">
     <link rel="stylesheet" href="../css/workx-style.css">
+    <link rel="stylesheet" href="../css/image-style.css">
 
 
     <!-- PROGRESS BAR -->
@@ -50,28 +51,60 @@
                     <div class="nav_list"> 
                         <a href="../admin/admin_dashboard.php" class="nav_link"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Dashboard</span> </a> 
                         <a href="../admin/admin_users.php" class="nav_link" > <i class='bx bx-user nav_icon'></i> <span class="nav_name">Customers</span> </a> 
-                        <a href="../admin/workx.php" class="nav_link active"> <i class='bx bx-message-square-detail nav_icon'></i> <span class="nav_name">Workx</span> </a>
-                        <a href="../admin/catalog.php" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Catalog</span> </a> 
+                        <a href="../admin/workx.php" class="nav_link "> <i class='bx bx-message-square-detail nav_icon'></i> <span class="nav_name">Workx</span> </a>
+                        <a href="../admin/catalog.php" class="nav_link active"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Catalog</span> </a> 
                         <a href="../admin/customer_comp.php" class="nav_link"> <i class='bx bx-message-square-detail nav_icon'></i> <span class="nav_name">Customer Complain</span> </a>
                         <a href="#" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Stats</span> </a> </div>
                 </div> <a href="../logout.php" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
             </nav>
         </div>
 
-      
-
         <!--Container Main start-->
         <div class="height-100">
             <div class="container mt-5 mb-3">
+                <div class="row">
+                    <!-- Button to Open the Modal -->
+                    <button type="button" class="btn btn-info mt-4" data-bs-toggle="modal" data-bs-target="#myModal_catalog">
+                        Add Catalog
+                    </button>
                     
+                        <?php
+                            // Get images from the database
+                            $query = $conn->query("SELECT * FROM images ORDER BY uploaded_on DESC");
+
+                            if($query->num_rows > 0){
+                                while($row = $query->fetch_assoc()){
+                                    $imageURL = '../uploads/'.$row["file_name"];
+                            ?>
+                        <div class="col-md-4 mt-3">
+                            <div class="card mt-5" style="width: 20rem;">
+                                <img src="<?php echo $imageURL; ?>" alt="catalog image" />
+                                <div class="card-body">
+                                    <h5 class="card-title"><?php echo $row['title'];?></h5>
+                                    <p class="card-text"><?php echo $row['description'];?></p>
+                                      <!-- Button to Open the Modal -->
+                                    <button type="button" class="btn btn-danger mt-4" data-bs-toggle="modal" data-bs-target="#myModal_delete_image<?php echo $row['id'];?>">
+                                       Delete Image
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <?php include '../admin/modal_delete_catalog.php';?>
+                        <?php }
+                        }else{ ?>
+                            <p class="text-light text-center mt-5">No image(s) found...</p>
+                    <?php } ?>
+                    </div>
+                   
+                 
+                </div>
+                
             </div>
         </div>
     <!--Container Main end-->
     <!-- SIDEBAR END-->
  </div>
-
-
-
+<?php include '../admin/modal_add_catalog.php';?>
 
     <script src="../js/sidebar.js"></script>
 

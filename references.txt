@@ -22,3 +22,6 @@ https://www.geeksforgeeks.org/create-a-drop-down-list-that-options-fetched-from-
 
 FOREIGH KEY AND TABLE RELATIONS
 https://www.youtube.com/watch?v=7HTAX0dfJqg
+
+INSERT IMAGE/FETCH IMAGE FROM DATABASE WITH FOLDER DIRECTORY
+https://www.codexworld.com/upload-store-image-file-in-database-using-php-mysql/
