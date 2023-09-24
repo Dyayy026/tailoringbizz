@@ -5,5 +5,6 @@ fix adding image into catalog tab (done)
 
 To fix(workx tab)
 lalagyan ng downpayment input ang add works modal
+check yung downpayment dapat may computation yun sa balance at service charge
 gagawan ng function na dapat ay may paid option after bayaran ang tahi
 aayusin ang display sa works tab dapat nauuna ang mga received, working status at ililippat ng tab ang mga finished status

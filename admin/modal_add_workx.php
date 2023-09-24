@@ -47,6 +47,10 @@
                         <input type="number" class="form-control" id="scharge" placeholder="Enter charge amount" name="scharge" required>
                     </div>
                     <div class="mb-3 mt-3">
+                        <label for="firstname" class="form-label"><strong>Down payment:</strong></label>
+                        <input type="number" class="form-control" id="scharge"  name="dpayment" >
+                    </div>
+                    <div class="mb-3 mt-3">
                         <label for="firstname" class="form-label"><strong>Pick up date:</strong></label>
                         <input type="date" class="form-control" id="pdate" name="pdate" required>
                     </div>

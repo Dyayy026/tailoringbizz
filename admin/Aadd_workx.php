@@ -7,6 +7,7 @@ include '../conn.php';
     $serv_type = $_POST['stype'];
     $scharge = $_POST['scharge'];
     $pdate = $_POST['pdate'];
+    $dpayment = $_POST['dpayment'];
     $gstatus = "Received";
     $receivedBy = $_POST['custfname'];
 
@@ -15,8 +16,8 @@ include '../conn.php';
     $myuid2 = mt_rand(000,999);
     $garment_id = $myuid1.$myuid2;
 
-    $sql = "INSERT INTO garments(cust_id, garment_id, garment_type, garment_work_desc, garment_type_of_serve, garment_serv_charge, garment_pickup_date, garment_status, garment_receivedby)
-            VALUES ('$cust_id', '$garment_id', '$gtype', '$wdesc', '$serv_type', '$scharge', '$pdate', '$gstatus', '$receivedBy')";
+    $sql = "INSERT INTO garments(cust_id, garment_id, garment_type, garment_work_desc, garment_type_of_serve, garment_serv_charge,garment_down, garment_pickup_date, garment_status, garment_receivedby)
+            VALUES ('$cust_id', '$garment_id', '$gtype', '$wdesc', '$serv_type', '$scharge','$dpayment', '$pdate', '$gstatus', '$receivedBy')";
 
     if($conn->query($sql) === TRUE){
 
