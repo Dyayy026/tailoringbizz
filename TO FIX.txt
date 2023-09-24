@@ -1,4 +1,9 @@
 To Fix:
 
 idouble check ang edit function ni works, tignan kung magwowork ang garment_id kung aalisin na ang "-" sa format (done)
-fix adding image into catalog tab
+fix adding image into catalog tab (done)
+
+To fix(workx tab)
+lalagyan ng downpayment input ang add works modal
+gagawan ng function na dapat ay may paid option after bayaran ang tahi
+aayusin ang display sa works tab dapat nauuna ang mga received, working status at ililippat ng tab ang mga finished status
